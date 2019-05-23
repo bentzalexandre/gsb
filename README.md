@@ -1,27 +1,22 @@
-# GSB
+---
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.5.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+<h2 id="installation">Installation</h2>
+<p>Pour installer l’application, effectuer les commandes suivantes :</p>
+<pre><code>git clone https://github.com/bentzalexandre/gsb.git
+cd gsb
+npm install
+npm start
+</code></pre>
+<p>Télécharger le fichier du REST sur le lien ci-dessous et placer le à la racine de votre serveur web local ou distant : <a href="https://drive.google.com/open?id=1ly4zDao5AS-slG2kwhMiBs6mAnTA7YCS">Fichier restGSB</a></p>
+<h2 id="lancement-de-lapplication">Lancement de l’application</h2>
+<p>Afin de lancer l’application, effectuer la commande ci-dessous dans un terminal et accéder y en entrant le lien dans votre navigateur :</p>
+<pre><code>npm start
+dirigez vous sur --&gt; http://localhost:4200
+</code></pre>
+<blockquote>
+<p>Written with <a href="https://stackedit.io/">StackEdit</a>.</p>
+</blockquote>
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

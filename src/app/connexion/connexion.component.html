@@ -1,0 +1,15 @@
+<div class='container'>
+  <h2>Connexion</h2>
+  <div class='alert alert-danger' [hidden]='estCache'>{{lblMessage}}</div>
+  <form class="col-lg-4" name="frmLogin" (ngSubmit)="valider()">
+    <div class="form-group">
+      <label>Login</label>
+      <input class="form-control" [(ngModel)]='login' type="text" name='lg'/>
+    </div>
+    <div>
+      <label>Password</label>
+      <input class="form-control" [(ngModel)]='password' type='password' name='motdepasse'/>
+    </div>
+    <button class="btn btn-secondary" type="submit">Valider</button>
+  </form>
+</div>

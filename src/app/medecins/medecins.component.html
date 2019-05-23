@@ -1,0 +1,50 @@
+<app-navbar></app-navbar>
+<h2>Rechercher le médecin</h2>
+<nav class="navbar-inverse" [hidden]="estCacheMenu">
+  <ul class="navbar-nav" style="display:flex; flex-direction: row; justify-content: center; width: 100%;">
+    <li><a (click)="dernierRapports()" style="margin-left: 5%;">Derniers rapports</a></li>
+    <li><a (click)="majMedecin()">Mise à jour</a></li>
+  </ul>
+</nav>
+<div class="col-lg-6">
+  <div class="form-group">
+      <input type="search" placeholder="Nom du médecin..." [(ngModel)]="nomMedecin" (keyup)="charger()" />
+  </div>
+</div>
+<div class="list-group" [hidden]="estCacheListe">
+  <ul>
+    <li class="list-group-item" *ngFor="let medecin of lesMedecins" (click)="selectionner(medecin)">
+      {{ medecin.nom }} {{ medecin.prenom }} - Département : {{ medecin.departement }}
+    </li>
+  </ul>
+</div>
+<table class="table table-bordered" *ngIf="afficherRapports">
+  <tr>
+    <th>Date</th>
+    <th>Motif</th>
+    <th>Bilan</th>
+    <th>Nom du visiteur</th>
+  </tr>
+  <tr *ngFor="let rapport of lesRapports">
+    <td>{{ rapport.date }}</td>
+    <td>{{ rapport.motif }}</td>
+    <td>{{ rapport.bilan }}</td>
+    <td>{{ rapport.nom }}</td>
+  </tr>
+</table>
+<form class="col-lg-6" name="frmMedecin" *ngIf="afficherMedecin" (ngSubmit)="valider()">
+  <div class="form-group">
+    <label for="adresse">Adresse </label>
+    <textarea rows="3" cols="30" required="true" [(ngModel)]="medecin.adresse" name="adr"> </textarea>
+  </div>
+  <div class="form-group">
+    <label for="tel">Téléphone</label>
+    <input type="text" required="true" [(ngModel)]="medecin.tel" name="tel" />
+  </div>
+  <div class="form-group">
+    <label for="spec">Spécialité</label>
+    <input type="text" [(ngModel)]="medecin.specialitecomplementaire" name="spec" />
+  </div>
+  <button type="submit">Valider</button>
+  <div class="alert alert-danger"*ngIf="afficherMessage">{{lblMessage}}</div>
+</form>
